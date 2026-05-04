@@ -110,33 +110,110 @@
 }
 
 
-
-
-/* ===== ANDROID FIX: LEFT SIDE INFO VISIBLE ===== */
+  /* ===== ANDROID FIX: FORCE LEFT SIDE VISIBLE ===== */
 @media (max-width: 768px) {
-    .ftco-about .row .col-md-6,
-    .ftco-about .row .col-lg-5,
-    .ftco-about .row .col-lg-7 {
+    /* Force all columns to stack vertically */
+    .ftco-about .row {
+        display: block !important;
+    }
+    
+    .ftco-about .row > div {
         display: block !important;
         width: 100% !important;
         max-width: 100% !important;
-        flex: 0 0 100% !important;
+        flex: none !important;
+        float: none !important;
+        clear: both !important;
     }
     
+    /* Force image section to be visible */
     .img-about {
         display: block !important;
         width: 100% !important;
-        margin-bottom: 30px;
+        margin-bottom: 30px !important;
+        padding: 15px !important;
     }
     
+    /* Force about image to be centered and visible */
+    .about-img {
+        text-align: center !important;
+    }
+    
+    .about-img img {
+        width: 150px !important;
+        height: auto !important;
+        margin: 0 auto !important;
+        display: block !important;
+    }
+    
+    /* Force about-info text to be visible */
     .about-info {
+        display: block !important;
         text-align: left !important;
-        padding: 10px !important;
+        padding: 10px 15px !important;
+        width: 100% !important;
     }
     
     .about-info p {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: baseline !important;
+        gap: 8px !important;
         font-size: 14px !important;
-        margin-bottom: 8px !important;
+        margin-bottom: 10px !important;
+        color: #fff !important;
+    }
+    
+    .about-info .title-s {
+        min-width: 85px !important;
+        font-weight: 700 !important;
+        color: #ffbd39 !important;
+    }
+    
+    /* Force skills section to be visible */
+    .skill-mf {
+        display: block !important;
+        width: 100% !important;
+        padding: 15px !important;
+        margin-top: 20px !important;
+    }
+    
+    .skill-mf .title-s {
+        font-size: 18px !important;
+        margin-bottom: 15px !important;
+        display: block !important;
+    }
+    
+    .skill-mf span {
+        font-size: 13px !important;
+    }
+    
+    /* Prevent any hidden overflow */
+    body, .container, .ftco-about {
+        overflow-x: hidden !important;
+    }
+    
+    .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
+
+/* For very small phones */
+@media (max-width: 480px) {
+    .about-info p {
+        flex-direction: column !important;
+        gap: 3px !important;
+        margin-bottom: 12px !important;
+    }
+    
+    .about-info .title-s {
+        min-width: auto !important;
+    }
+    
+    .skill-mf span {
+        display: inline-block !important;
+        margin-bottom: 5px !important;
     }
 }
 
