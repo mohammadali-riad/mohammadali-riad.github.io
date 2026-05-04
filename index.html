@@ -19,21 +19,9 @@
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        font-family: 'Poppins', sans-serif;
-        background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-        color: #fff;
-        overflow-x: hidden;
-    }
-
     /* Typing Animation */
     #typing-animation {
+        position: relative;
         font-size: 30px;
         font-weight: bold;
         color: #ffbd39;
@@ -41,26 +29,26 @@
         word-break: break-word;
     }
 
-    @media (max-width: 768px) {
-        #typing-animation {
-            font-size: 20px;
-        }
-        .hero .text h1 {
-            font-size: 32px;
-        }
-        .hero .text h2 {
-            font-size: 18px;
-        }
-        .container {
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-        .card {
-            margin: 10px 0;
-        }
+    @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; }
     }
 
-    /* Progress Bars */
+    /* Progress Bar Animation */
+    .progress-bar {
+        width: 0;
+        transition: width 1.5s ease-in-out;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+        #typing-animation { font-size: 20px; }
+        .hero .text h1 { font-size: 32px; }
+        .hero .text h2 { font-size: 18px; }
+        .container { padding-left: 15px; padding-right: 15px; }
+    }
+
+    /* Skill Section Progress Bars */
     .skill-mf .progress {
         margin: .5rem 0 1.2rem 0;
         border-radius: 10px;
@@ -71,16 +59,6 @@
         background-color: #ffbd39;
         border-radius: 10px;
     }
-
-    /* Cards */
-    .card {
-        transition: transform 0.3s ease;
-    }
-    .card:hover {
-        transform: translateY(-5px);
-    }
-
-    /* Zooming is allowed and professional */
     </style>
 
   </head>
@@ -153,7 +131,7 @@
         </div>
     </section>
 
-    <!-- About Section - New Professional Design -->
+    <!-- About Section - NEW PROFESSIONAL DESIGN -->
     <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
         <div class="container">
             <div class="row justify-content-center mb-4">
@@ -218,18 +196,24 @@
                     </div>
                 </div>
             </div>
-            <!-- Skills Section -->
+            <!-- Skills Section with Animation -->
             <div class="row mt-4">
                 <div class="col-md-12">
                     <div style="background: rgba(255,255,255,0.08); border-radius: 20px; padding: 25px; border: 1px solid rgba(255,255,255,0.1);">
                         <h3 class="text-center mb-4" style="color: #ffbd39;">My Skills</h3>
-                        <div class="row">
-                            <div class="col-md-6 mb-3"><div class="d-flex justify-content-between"><span>📝 Blogging & SEO</span><span>95%</span></div><div class="progress"><div class="progress-bar" style="width:95%"></div></div></div>
-                            <div class="col-md-6 mb-3"><div class="d-flex justify-content-between"><span>📐 LaTeX</span><span>85%</span></div><div class="progress"><div class="progress-bar" style="width:85%"></div></div></div>
-                            <div class="col-md-6 mb-3"><div class="d-flex justify-content-between"><span>🎨 Photo Editing</span><span>90%</span></div><div class="progress"><div class="progress-bar" style="width:90%"></div></div></div>
-                            <div class="col-md-6 mb-3"><div class="d-flex justify-content-between"><span>💻 Web Tools Development</span><span>85%</span></div><div class="progress"><div class="progress-bar" style="width:85%"></div></div></div>
-                            <div class="col-md-6 mb-3"><div class="d-flex justify-content-between"><span>📄 Microsoft Word</span><span>80%</span></div><div class="progress"><div class="progress-bar" style="width:80%"></div></div></div>
-                            <div class="col-md-6 mb-3"><div class="d-flex justify-content-between"><span>🔬 Science Communication</span><span>90%</span></div><div class="progress"><div class="progress-bar" style="width:90%"></div></div></div>
+                        <div class="skill-mf">
+                            <span>📝 Blogging & SEO</span> <span class="pull-right">95%</span>
+                            <div class="progress"><div class="progress-bar" role="progressbar" style="width: 0%;" data-width="95%"></div></div>
+                            <span>📐 LaTeX</span> <span class="pull-right">85%</span>
+                            <div class="progress"><div class="progress-bar" role="progressbar" style="width: 0%;" data-width="85%"></div></div>
+                            <span>🎨 Photo Editing</span> <span class="pull-right">90%</span>
+                            <div class="progress"><div class="progress-bar" role="progressbar" style="width: 0%;" data-width="90%"></div></div>
+                            <span>💻 Web Tools Development</span> <span class="pull-right">85%</span>
+                            <div class="progress"><div class="progress-bar" role="progressbar" style="width: 0%;" data-width="85%"></div></div>
+                            <span>📄 Microsoft Word</span> <span class="pull-right">80%</span>
+                            <div class="progress"><div class="progress-bar" role="progressbar" style="width: 0%;" data-width="80%"></div></div>
+                            <span>🔬 Science Communication</span> <span class="pull-right">90%</span>
+                            <div class="progress"><div class="progress-bar" role="progressbar" style="width: 0%;" data-width="90%"></div></div>
                         </div>
                     </div>
                 </div>
@@ -237,7 +221,7 @@
         </div>
     </section>
 
-    <!-- Resume / Experience Section -->
+    <!-- Resume / Experience Section (Original) -->
     <section class="ftco-section ftco-no-pb" id="resume-section">
         <div class="container">
             <div class="row justify-content-center pb-5">
@@ -247,7 +231,6 @@
                 </div>
             </div>
 
-            <!-- Ambassador Roles -->
             <div class="row">
                 <div class="col-md-6 mb-4"><div class="card text-center p-4" style="background: rgba(255,255,255,0.08); border-radius: 15px; height:100%"><div class="mb-3"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRdZWcrdVBrtCGxtRBmoegscj9X_TLLghYXz7knlHGzt2RlspmVGI1RVom8klcGQlu95srKedTF_vu2k81l3QPlEA48qvAaySMnox1kqf-qodfNUXeYSayWZfViQh1qCinIg-fKEBb4_ZKoyV57EUJ4TmqmTQXwpW85BtxyZitXiZejJIwb7YapubpwEE0/s16000/IAAC.png" style="width:80px"></div><h3>Official Ambassador</h3><p>IAAC</p><p style="color:#ffbd39">2025-Present</p><a href="https://www.iaac.space/en/mohali" target="_blank" style="color:#3b82f6">View Profile →</a></div></div>
                 <div class="col-md-6 mb-4"><div class="card text-center p-4" style="background: rgba(255,255,255,0.08); border-radius: 15px; height:100%"><div class="mb-3"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgbapH5k8O675EqhSg0LXLbrSVtuQV4xF-yipEo6KO_pQjzdl5JQ4v65EczAGbsNf0xcFR2KpPJJ4EtHGcbmzDD2MS39ktBiWFb6yi6USEuk4uOA_pwOJ9YwPi0ZoEqN55rTv3Lnx3QtDYiO0vnyyArEZKUyAGMchVCID6QQJ4aUHzAktsxOqsVYj9euzGT/s16000/ICSC.png" style="width:80px"></div><h3>Official Ambassador</h3><p>ICSC</p><p style="color:#ffbd39">2025-Present</p><a href="https://icscompetition.org/en/mohali" target="_blank" style="color:#3b82f6">View Profile →</a></div></div>
@@ -345,6 +328,37 @@
     <script src="js/jquery.animateNumber.min.js"></script>
     <script src="js/scrollax.min.js"></script>
     <script src="js/main.js"></script>
+
+    <!-- Animation for Progress Bars on Scroll -->
+    <script>
+        function animateProgressBars() {
+            document.querySelectorAll('.progress-bar').forEach(bar => {
+                let width = bar.getAttribute('data-width');
+                if (width && bar.style.width !== width) {
+                    bar.style.width = width;
+                }
+            });
+        }
+
+        // Trigger animation when skills section comes into view
+        const skillsSection = document.querySelector('#about-section .skill-mf');
+        if (skillsSection) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateProgressBars();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            observer.observe(skillsSection);
+        }
+
+        // Also animate on page load if visible
+        window.addEventListener('load', () => {
+            setTimeout(animateProgressBars, 500);
+        });
+    </script>
 
     <script>
         document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
