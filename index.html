@@ -54,44 +54,109 @@
     }
 
     /* Card Hover Animation */
-    .card {
+    .card, .exp-card, .stat-card {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .card:hover {
+    .card:hover, .exp-card:hover, .stat-card:hover {
         transform: translateY(-8px);
         box-shadow: 0 15px 30px rgba(0,0,0,0.3);
     }
 
-    /* About Section - Big Background Text */
+    /* Section Heading with Big Background Text - FIXED POSITION */
     .heading-section {
         position: relative;
+        text-align: center;
+        margin-bottom: 30px;
     }
     .heading-section .big {
-        font-size: 120px;
+        font-size: 100px;
         font-weight: 900;
         color: rgba(255,255,255,0.05);
         position: absolute;
-        top: -60px;
+        top: 50%;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translate(-50%, -50%);
         width: 100%;
         text-align: center;
         z-index: 0;
         letter-spacing: 5px;
+        white-space: nowrap;
     }
     .heading-section h2 {
         position: relative;
         z-index: 1;
         font-size: 36px;
+        margin-bottom: 10px;
+    }
+    .heading-section p {
+        position: relative;
+        z-index: 1;
     }
     @media (max-width: 768px) {
         .heading-section .big {
-            font-size: 60px;
-            top: -30px;
+            font-size: 50px;
+            white-space: normal;
         }
         .heading-section h2 {
             font-size: 28px;
         }
+    }
+
+    /* Experience Card Styling */
+    .exp-card {
+        background: rgba(255,255,255,0.08);
+        border-radius: 15px;
+        padding: 25px;
+        text-align: center;
+        transition: all 0.3s ease;
+        height: 100%;
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+    .exp-card:hover {
+        background: rgba(255,255,255,0.12);
+        border-color: #ffbd39;
+    }
+    .exp-card img {
+        width: 80px;
+        margin-bottom: 15px;
+    }
+    .exp-card h3 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+    .exp-card p {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    .exp-card .date {
+        color: #ffbd39;
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+
+    /* Stat Card Styling */
+    .stat-card {
+        background: rgba(255,255,255,0.08);
+        border-radius: 15px;
+        padding: 20px;
+        text-align: center;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+    .stat-card:hover {
+        background: rgba(255,255,255,0.12);
+        border-color: #ffbd39;
+    }
+    .stat-card .stat-number {
+        font-size: 42px;
+        font-weight: 700;
+        color: #ffbd39;
+        margin-bottom: 5px;
+    }
+    .stat-card .stat-label {
+        font-size: 14px;
+        color: #ccc;
     }
 
     /* Blog Section - Dark overlay for text visibility */
@@ -133,40 +198,6 @@
     }
     .ftco-footer {
         padding: 20px 0 !important;
-    }
-
-    /* Experience Card Styling */
-    .exp-card {
-        background: rgba(255,255,255,0.08);
-        border-radius: 15px;
-        padding: 25px;
-        text-align: center;
-        transition: all 0.3s ease;
-        height: 100%;
-        border: 1px solid rgba(255,255,255,0.1);
-    }
-    .exp-card:hover {
-        transform: translateY(-8px);
-        background: rgba(255,255,255,0.12);
-        border-color: #ffbd39;
-    }
-    .exp-card img {
-        width: 80px;
-        margin-bottom: 15px;
-    }
-    .exp-card h3 {
-        font-size: 18px;
-        font-weight: 600;
-        margin-bottom: 8px;
-    }
-    .exp-card p {
-        font-size: 14px;
-        margin-bottom: 5px;
-    }
-    .exp-card .date {
-        color: #ffbd39;
-        font-size: 13px;
-        margin-bottom: 12px;
     }
     </style>
 
@@ -243,7 +274,7 @@
     <!-- About Section -->
     <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
         <div class="container">
-            <div class="row justify-content-center mb-4">
+            <div class="row justify-content-center">
                 <div class="col-md-12 heading-section text-center ftco-animate">
                     <h1 class="big">About</h1>
                     <h2 class="mb-4">About Me</h2>
@@ -273,12 +304,6 @@
                         <h3 style="color: #ffbd39;">Who Am I?</h3>
                         <p>I am a Bangladeshi student, founder of <strong>ariyanriad.blogspot.com</strong>, and official ambassador for 5 international competitions: International Astronomy and Astrophysics Competition (IAAC), International Computer Science Competition (ICSC), International Youth Math Challenge (IYMC), International Linguistics Challenge (ILC), and Global Quantum Mechanics Challenge (GQMC).</p>
                         <p>I'm passionate about making science accessible through content creation, building web tools, and inspiring students worldwide. I've built 8 interactive web tools and written over 100 educational blog posts.</p>
-                        <div class="row mt-4">
-                            <div class="col-6 col-md-3 text-center mb-3"><div style="background: rgba(255,189,57,0.2); border-radius: 15px; padding: 12px;"><h3 style="color: #ffbd39; font-size: 28px;">5</h3><p style="font-size: 11px;">Ambassador Roles</p></div></div>
-                            <div class="col-6 col-md-3 text-center mb-3"><div style="background: rgba(255,189,57,0.2); border-radius: 15px; padding: 12px;"><h3 style="color: #ffbd39; font-size: 28px;">8</h3><p style="font-size: 11px;">Web Tools Built</p></div></div>
-                            <div class="col-6 col-md-3 text-center mb-3"><div style="background: rgba(255,189,57,0.2); border-radius: 15px; padding: 12px;"><h3 style="color: #ffbd39; font-size: 28px;">100+</h3><p style="font-size: 11px;">Blog Posts</p></div></div>
-                            <div class="col-6 col-md-3 text-center mb-3"><div style="background: rgba(255,189,57,0.2); border-radius: 15px; padding: 12px;"><h3 style="color: #ffbd39; font-size: 28px;">1</h3><p style="font-size: 11px;">International Award</p></div></div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -303,15 +328,14 @@
     <!-- Experience / Ambassador Section -->
     <section class="ftco-section ftco-no-pb" id="resume-section">
         <div class="container">
-            <div class="row justify-content-center pb-5">
-                <div class="col-md-10 heading-section text-center ftco-animate">
+            <div class="row justify-content-center">
+                <div class="col-md-12 heading-section text-center ftco-animate">
                     <h1 class="big">Resume</h1>
                     <h2 class="mb-4">Experience</h2>
                 </div>
             </div>
 
             <div class="row">
-                <!-- IAAC -->
                 <div class="col-md-6 mb-4">
                     <div class="exp-card">
                         <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRdZWcrdVBrtCGxtRBmoegscj9X_TLLghYXz7knlHGzt2RlspmVGI1RVom8klcGQlu95srKedTF_vu2k81l3QPlEA48qvAaySMnox1kqf-qodfNUXeYSayWZfViQh1qCinIg-fKEBb4_ZKoyV57EUJ4TmqmTQXwpW85BtxyZitXiZejJIwb7YapubpwEE0/s16000/IAAC.png" alt="IAAC">
@@ -321,7 +345,6 @@
                         <a href="https://www.iaac.space/en/mohali" target="_blank" style="color:#3b82f6">View Public Page →</a>
                     </div>
                 </div>
-                <!-- ICSC -->
                 <div class="col-md-6 mb-4">
                     <div class="exp-card">
                         <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgbapH5k8O675EqhSg0LXLbrSVtuQV4xF-yipEo6KO_pQjzdl5JQ4v65EczAGbsNf0xcFR2KpPJJ4EtHGcbmzDD2MS39ktBiWFb6yi6USEuk4uOA_pwOJ9YwPi0ZoEqN55rTv3Lnx3QtDYiO0vnyyArEZKUyAGMchVCID6QQJ4aUHzAktsxOqsVYj9euzGT/s16000/ICSC.png" alt="ICSC">
@@ -331,7 +354,6 @@
                         <a href="https://icscompetition.org/en/mohali" target="_blank" style="color:#3b82f6">View Public Page →</a>
                     </div>
                 </div>
-                <!-- IYMC -->
                 <div class="col-md-6 mb-4">
                     <div class="exp-card">
                         <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRYRV51aRLQOdcZrDee1OQ6RX3eoZmqU4f9BCegfyI19iMIdBpnfhWgjUT2bAzgeqwmoFdgcAvUuyddDmnlqlDkZSjJzjmKAmEYeKn1NateWTTGWrpYMlu5G9zQzH2mX6dY3WnJKPJrJb-RVaj7mUNyEE-UF8g_dpjVLAG2jovBE7P2lvgocp5SFtjsKT-/s16000/IYMC.png" alt="IYMC">
@@ -341,7 +363,6 @@
                         <a href="https://iymc.info/en/mohali" target="_blank" style="color:#3b82f6">View Public Page →</a>
                     </div>
                 </div>
-                <!-- ILC -->
                 <div class="col-md-6 mb-4">
                     <div class="exp-card">
                         <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHCGXF2A82yaq4tgOTOc4DYbjtdp9Wku2HUkcI_NAORuDPUvGED8Qpipvkhf28cUrnYh6T-U-j2uneDaMr3TgM9VPsaAEW4SckLAUf-gAMnZ8J_Zv2hZQPJnv9atOJkcJlL3oUwRqfVCXK47eARMsY-zamdEUC8bxKz6SJGqkwtzwpYxERzSifSmmUvc99/s16000/ILC.png" alt="ILC">
@@ -351,7 +372,6 @@
                         <a href="https://lingchallenge.org/en/mohali" target="_blank" style="color:#3b82f6">View Public Page →</a>
                     </div>
                 </div>
-                <!-- GQMC -->
                 <div class="col-md-6 mb-4">
                     <div class="exp-card">
                         <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi9BlQcrllgqHHal0biyB2uJ7A4t_l8KBNCxNmmlEwXX8OZ8zEHBCGgVDr0m1QPKXmSXx3lzM9T_YmidDz34xoAzE0wVJjXDwY0NR9zoPMN0PPvPMbkNcodgnaGIleyz0zpk_6L64AAVpuKR-7hWC0OnCiYtVe_DZwuelDgLL-QyN0UR4sm5TIfqg_HW_jn/s16000/GQMC.png" alt="GQMC">
@@ -361,7 +381,6 @@
                         <a href="https://glqmc.org/en/mohali" target="_blank" style="color:#3b82f6">View Public Page →</a>
                     </div>
                 </div>
-                <!-- Scientific Social -->
                 <div class="col-md-6 mb-4">
                     <div class="exp-card">
                         <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjE9MjZKfILY4KNvRDMh4eW-QOZLBEw0irl05DO5hAu6i4WFnaFToyObOT45pItmIzH5YbTjI7pKySN9S35iX73A3xEnkp0J8_hNYh1N4je80eECB4wBA4CiExnA7RQY8mTC9tLoqfPvWzYph-LDwSqT4aE5aMLhk-cQzBcH4vpi9VfUqjYD58ZFpMz11oR/s1080/1000038161.jpg" alt="Scientific Social">
@@ -385,8 +404,8 @@
     <!-- Projects Section -->
     <section class="ftco-section" id="project-section">
         <div class="container">
-            <div class="row justify-content-center mb-5">
-                <div class="col-md-7 heading-section text-center ftco-animate">
+            <div class="row justify-content-center">
+                <div class="col-md-12 heading-section text-center ftco-animate">
                     <h1 class="big">Projects</h1>
                     <h2 class="mb-4">My Web Tools</h2>
                 </div>
@@ -407,8 +426,8 @@
     <!-- Awards Section -->
     <section class="ftco-section" id="awards-section">
         <div class="container">
-            <div class="row justify-content-center mb-5">
-                <div class="col-md-7 heading-section text-center ftco-animate">
+            <div class="row justify-content-center">
+                <div class="col-md-12 heading-section text-center ftco-animate">
                     <h1 class="big">Awards</h1>
                     <h2 class="mb-4">Recognition & Achievements</h2>
                     <p>Official awards received for outstanding performance and contribution.</p>
@@ -428,24 +447,48 @@
         </div>
     </section>
 
-    <!-- Counter & Blog Section -->
-    <section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
-        <div class="container"><div class="row d-md-flex align-items-center">
-            <div class="col-md-3 text-center"><div><strong class="number" data-number="5">5</strong><span>Ambassador Roles</span></div></div>
-            <div class="col-md-3 text-center"><div><strong class="number" data-number="1">1</strong><span>Awards</span></div></div>
-            <div class="col-md-3 text-center"><div><strong class="number" data-number="8">8</strong><span>Web Tools Built</span></div></div>
-            <div class="col-md-3 text-center"><div><strong class="number" data-number="100">100+</strong><span>Blog Posts</span></div></div>
-        </div></div>
-        <div class="ftco-section ftco-hireme img margin-top" style="background-image: url('images/bg_1.jpg')">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-7 text-center">
-                        <h2>Read my <span>Blog</span></h2>
-                        <div class="heading">
-                            <h4>Educational articles on study resources, technology, and competition guides</h4>
-                            <br>
-                            <p><a href="https://ariyanriad.blogspot.com" target="_blank" class="btn btn-primary py-3 px-5">Visit Blog →</a></p>
-                        </div>
+    <!-- Statistics Cards Section (Before Blog) -->
+    <section class="ftco-section ftco-no-pb">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="stat-card">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Ambassador Roles</div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stat-card">
+                        <div class="stat-number">1</div>
+                        <div class="stat-label">Awards</div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stat-card">
+                        <div class="stat-number">8</div>
+                        <div class="stat-label">Web Tools Built</div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stat-card">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Blog Posts</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="ftco-section ftco-hireme img margin-top" style="background-image: url('images/bg_1.jpg')">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-7 text-center">
+                    <h2>Read my <span>Blog</span></h2>
+                    <div class="heading">
+                        <h4>Educational articles on study resources, technology, and competition guides</h4>
+                        <br>
+                        <p><a href="https://ariyanriad.blogspot.com" target="_blank" class="btn btn-primary py-3 px-5">Visit Blog →</a></p>
                     </div>
                 </div>
             </div>
@@ -455,8 +498,8 @@
     <!-- Contact Section -->
     <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
         <div class="container">
-            <div class="row justify-content-center mb-5">
-                <div class="col-md-7 heading-section text-center ftco-animate">
+            <div class="row justify-content-center">
+                <div class="col-md-12 heading-section text-center ftco-animate">
                     <h1 class="big">Contact</h1>
                     <h2 class="mb-4">Contact Me</h2>
                     <p>Below are the details to reach out to me!</p>
