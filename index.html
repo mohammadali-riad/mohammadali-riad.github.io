@@ -58,11 +58,43 @@
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.3);
     }
 
-    /* Blog Section Fix - Dark background for readability */
+    /* About Section - Big Background Text */
+    .heading-section {
+        position: relative;
+    }
+    .heading-section .big {
+        font-size: 120px;
+        font-weight: 900;
+        color: rgba(255,255,255,0.05);
+        position: absolute;
+        top: -60px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+        z-index: 0;
+        letter-spacing: 5px;
+    }
+    .heading-section h2 {
+        position: relative;
+        z-index: 1;
+        font-size: 36px;
+    }
+    @media (max-width: 768px) {
+        .heading-section .big {
+            font-size: 60px;
+            top: -30px;
+        }
+        .heading-section h2 {
+            font-size: 28px;
+        }
+    }
+
+    /* Blog Section - Dark overlay for text visibility */
     .ftco-hireme {
         position: relative;
     }
@@ -73,7 +105,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0,0,0,0.7);
+        background: rgba(0,0,0,0.75);
         z-index: 0;
     }
     .ftco-hireme .container, .ftco-hireme .row, .ftco-hireme .col-md-7 {
@@ -101,6 +133,40 @@
     }
     .ftco-footer {
         padding: 20px 0 !important;
+    }
+
+    /* Experience Card Styling */
+    .exp-card {
+        background: rgba(255,255,255,0.08);
+        border-radius: 15px;
+        padding: 25px;
+        text-align: center;
+        transition: all 0.3s ease;
+        height: 100%;
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+    .exp-card:hover {
+        transform: translateY(-8px);
+        background: rgba(255,255,255,0.12);
+        border-color: #ffbd39;
+    }
+    .exp-card img {
+        width: 80px;
+        margin-bottom: 15px;
+    }
+    .exp-card h3 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+    .exp-card p {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    .exp-card .date {
+        color: #ffbd39;
+        font-size: 13px;
+        margin-bottom: 12px;
     }
     </style>
 
@@ -234,12 +300,12 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- Experience / Ambassador Section -->
     <section class="ftco-section ftco-no-pb" id="resume-section">
         <div class="container">
             <div class="row justify-content-center pb-5">
                 <div class="col-md-10 heading-section text-center ftco-animate">
-                    <h1 class="big big-2">Resume</h1>
+                    <h1 class="big">Resume</h1>
                     <h2 class="mb-4">Experience</h2>
                 </div>
             </div>
@@ -247,61 +313,61 @@
             <div class="row">
                 <!-- IAAC -->
                 <div class="col-md-6 mb-4">
-                    <div class="card text-center p-4" style="background: rgba(255,255,255,0.08); border-radius: 15px; height:100%">
-                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRdZWcrdVBrtCGxtRBmoegscj9X_TLLghYXz7knlHGzt2RlspmVGI1RVom8klcGQlu95srKedTF_vu2k81l3QPlEA48qvAaySMnox1kqf-qodfNUXeYSayWZfViQh1qCinIg-fKEBb4_ZKoyV57EUJ4TmqmTQXwpW85BtxyZitXiZejJIwb7YapubpwEE0/s16000/IAAC.png" style="width:80px; margin-bottom:15px">
+                    <div class="exp-card">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRdZWcrdVBrtCGxtRBmoegscj9X_TLLghYXz7knlHGzt2RlspmVGI1RVom8klcGQlu95srKedTF_vu2k81l3QPlEA48qvAaySMnox1kqf-qodfNUXeYSayWZfViQh1qCinIg-fKEBb4_ZKoyV57EUJ4TmqmTQXwpW85BtxyZitXiZejJIwb7YapubpwEE0/s16000/IAAC.png" alt="IAAC">
                         <h3>Official Ambassador</h3>
                         <p>International Astronomy and Astrophysics Competition (IAAC)</p>
-                        <p style="color:#ffbd39">2025 - Present</p>
+                        <div class="date">2025 - Present</div>
                         <a href="https://www.iaac.space/en/mohali" target="_blank" style="color:#3b82f6">View Public Page →</a>
                     </div>
                 </div>
                 <!-- ICSC -->
                 <div class="col-md-6 mb-4">
-                    <div class="card text-center p-4" style="background: rgba(255,255,255,0.08); border-radius: 15px; height:100%">
-                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgbapH5k8O675EqhSg0LXLbrSVtuQV4xF-yipEo6KO_pQjzdl5JQ4v65EczAGbsNf0xcFR2KpPJJ4EtHGcbmzDD2MS39ktBiWFb6yi6USEuk4uOA_pwOJ9YwPi0ZoEqN55rTv3Lnx3QtDYiO0vnyyArEZKUyAGMchVCID6QQJ4aUHzAktsxOqsVYj9euzGT/s16000/ICSC.png" style="width:80px; margin-bottom:15px">
+                    <div class="exp-card">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgbapH5k8O675EqhSg0LXLbrSVtuQV4xF-yipEo6KO_pQjzdl5JQ4v65EczAGbsNf0xcFR2KpPJJ4EtHGcbmzDD2MS39ktBiWFb6yi6USEuk4uOA_pwOJ9YwPi0ZoEqN55rTv3Lnx3QtDYiO0vnyyArEZKUyAGMchVCID6QQJ4aUHzAktsxOqsVYj9euzGT/s16000/ICSC.png" alt="ICSC">
                         <h3>Official Ambassador</h3>
                         <p>International Computer Science Competition (ICSC)</p>
-                        <p style="color:#ffbd39">2025 - Present</p>
+                        <div class="date">2025 - Present</div>
                         <a href="https://icscompetition.org/en/mohali" target="_blank" style="color:#3b82f6">View Public Page →</a>
                     </div>
                 </div>
                 <!-- IYMC -->
                 <div class="col-md-6 mb-4">
-                    <div class="card text-center p-4" style="background: rgba(255,255,255,0.08); border-radius: 15px; height:100%">
-                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRYRV51aRLQOdcZrDee1OQ6RX3eoZmqU4f9BCegfyI19iMIdBpnfhWgjUT2bAzgeqwmoFdgcAvUuyddDmnlqlDkZSjJzjmKAmEYeKn1NateWTTGWrpYMlu5G9zQzH2mX6dY3WnJKPJrJb-RVaj7mUNyEE-UF8g_dpjVLAG2jovBE7P2lvgocp5SFtjsKT-/s16000/IYMC.png" style="width:80px; margin-bottom:15px">
+                    <div class="exp-card">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRYRV51aRLQOdcZrDee1OQ6RX3eoZmqU4f9BCegfyI19iMIdBpnfhWgjUT2bAzgeqwmoFdgcAvUuyddDmnlqlDkZSjJzjmKAmEYeKn1NateWTTGWrpYMlu5G9zQzH2mX6dY3WnJKPJrJb-RVaj7mUNyEE-UF8g_dpjVLAG2jovBE7P2lvgocp5SFtjsKT-/s16000/IYMC.png" alt="IYMC">
                         <h3>Official Ambassador</h3>
                         <p>International Youth Math Challenge (IYMC)</p>
-                        <p style="color:#ffbd39">2025 - Present</p>
+                        <div class="date">2025 - Present</div>
                         <a href="https://iymc.info/en/mohali" target="_blank" style="color:#3b82f6">View Public Page →</a>
                     </div>
                 </div>
                 <!-- ILC -->
                 <div class="col-md-6 mb-4">
-                    <div class="card text-center p-4" style="background: rgba(255,255,255,0.08); border-radius: 15px; height:100%">
-                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHCGXF2A82yaq4tgOTOc4DYbjtdp9Wku2HUkcI_NAORuDPUvGED8Qpipvkhf28cUrnYh6T-U-j2uneDaMr3TgM9VPsaAEW4SckLAUf-gAMnZ8J_Zv2hZQPJnv9atOJkcJlL3oUwRqfVCXK47eARMsY-zamdEUC8bxKz6SJGqkwtzwpYxERzSifSmmUvc99/s16000/ILC.png" style="width:80px; margin-bottom:15px">
+                    <div class="exp-card">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHCGXF2A82yaq4tgOTOc4DYbjtdp9Wku2HUkcI_NAORuDPUvGED8Qpipvkhf28cUrnYh6T-U-j2uneDaMr3TgM9VPsaAEW4SckLAUf-gAMnZ8J_Zv2hZQPJnv9atOJkcJlL3oUwRqfVCXK47eARMsY-zamdEUC8bxKz6SJGqkwtzwpYxERzSifSmmUvc99/s16000/ILC.png" alt="ILC">
                         <h3>Official Ambassador</h3>
                         <p>International Linguistics Challenge (ILC)</p>
-                        <p style="color:#ffbd39">2025 - Present</p>
+                        <div class="date">2025 - Present</div>
                         <a href="https://lingchallenge.org/en/mohali" target="_blank" style="color:#3b82f6">View Public Page →</a>
                     </div>
                 </div>
                 <!-- GQMC -->
                 <div class="col-md-6 mb-4">
-                    <div class="card text-center p-4" style="background: rgba(255,255,255,0.08); border-radius: 15px; height:100%">
-                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi9BlQcrllgqHHal0biyB2uJ7A4t_l8KBNCxNmmlEwXX8OZ8zEHBCGgVDr0m1QPKXmSXx3lzM9T_YmidDz34xoAzE0wVJjXDwY0NR9zoPMN0PPvPMbkNcodgnaGIleyz0zpk_6L64AAVpuKR-7hWC0OnCiYtVe_DZwuelDgLL-QyN0UR4sm5TIfqg_HW_jn/s16000/GQMC.png" style="width:80px; margin-bottom:15px">
+                    <div class="exp-card">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi9BlQcrllgqHHal0biyB2uJ7A4t_l8KBNCxNmmlEwXX8OZ8zEHBCGgVDr0m1QPKXmSXx3lzM9T_YmidDz34xoAzE0wVJjXDwY0NR9zoPMN0PPvPMbkNcodgnaGIleyz0zpk_6L64AAVpuKR-7hWC0OnCiYtVe_DZwuelDgLL-QyN0UR4sm5TIfqg_HW_jn/s16000/GQMC.png" alt="GQMC">
                         <h3>Official Ambassador</h3>
                         <p>Global Quantum Mechanics Challenge (GQMC)</p>
-                        <p style="color:#ffbd39">2025 - Present</p>
+                        <div class="date">2025 - Present</div>
                         <a href="https://glqmc.org/en/mohali" target="_blank" style="color:#3b82f6">View Public Page →</a>
                     </div>
                 </div>
                 <!-- Scientific Social -->
                 <div class="col-md-6 mb-4">
-                    <div class="card text-center p-4" style="background: rgba(255,255,255,0.08); border-radius: 15px; height:100%">
-                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjE9MjZKfILY4KNvRDMh4eW-QOZLBEw0irl05DO5hAu6i4WFnaFToyObOT45pItmIzH5YbTjI7pKySN9S35iX73A3xEnkp0J8_hNYh1N4je80eECB4wBA4CiExnA7RQY8mTC9tLoqfPvWzYph-LDwSqT4aE5aMLhk-cQzBcH4vpi9VfUqjYD58ZFpMz11oR/s1080/1000038161.jpg" style="width:80px; margin-bottom:15px">
+                    <div class="exp-card">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjE9MjZKfILY4KNvRDMh4eW-QOZLBEw0irl05DO5hAu6i4WFnaFToyObOT45pItmIzH5YbTjI7pKySN9S35iX73A3xEnkp0J8_hNYh1N4je80eECB4wBA4CiExnA7RQY8mTC9tLoqfPvWzYph-LDwSqT4aE5aMLhk-cQzBcH4vpi9VfUqjYD58ZFpMz11oR/s1080/1000038161.jpg" alt="Scientific Social">
                         <h3>Chief Management Officer (CMO)</h3>
                         <p>Scientific Social</p>
-                        <p style="color:#666">2025 - 2026</p>
+                        <div class="date" style="color:#888">2025 - 2026</div>
                         <a href="https://www.facebook.com/share/1GT1bBGGWM/" target="_blank" style="color:#3b82f6">View Organization →</a>
                     </div>
                 </div>
@@ -319,16 +385,21 @@
     <!-- Projects Section -->
     <section class="ftco-section" id="project-section">
         <div class="container">
-            <div class="row justify-content-center mb-5"><div class="col-md-7 heading-section text-center"><h1 class="big big-2">Projects</h1><h2 class="mb-4">My Web Tools</h2></div></div>
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-7 heading-section text-center ftco-animate">
+                    <h1 class="big">Projects</h1>
+                    <h2 class="mb-4">My Web Tools</h2>
+                </div>
+            </div>
             <div class="row">
-                <div class="col-md-6 mb-4"><div class="card text-center p-4" style="background: rgba(255,255,255,0.08); border-radius: 15px"><span style="font-size:40px">📄➡️🖼️</span><h3>PDF to Image Converter</h3><p>Convert PDF to JPG/PNG/WebP/BMP/TIFF. 100% private.</p><a href="https://mohammadali-riad.github.io/pdf-to-image/" target="_blank" style="color:#ffbd39">Try Tool →</a></div></div>
-                <div class="col-md-6 mb-4"><div class="card text-center p-4" style="background: rgba(255,255,255,0.08); border-radius: 15px"><span style="font-size:40px">🗜️🖼️</span><h3>Image Compressor Pro</h3><p>Compress JPG/PNG/WebP with quality slider.</p><a href="https://mohammadali-riad.github.io/image-compressor/" target="_blank" style="color:#ffbd39">Try Tool →</a></div></div>
-                <div class="col-md-6 mb-4"><div class="card text-center p-4" style="background: rgba(255,255,255,0.08); border-radius: 15px"><span style="font-size:40px">📱</span><h3>QR Code Generator</h3><p>Generate QR codes for text, URLs, WiFi, contacts.</p><a href="https://ariyanriad.blogspot.com/p/qr-code-generator.html" target="_blank" style="color:#ffbd39">Try Tool →</a></div></div>
-                <div class="col-md-6 mb-4"><div class="card text-center p-4" style="background: rgba(255,255,255,0.08); border-radius: 15px"><span style="font-size:40px">📝</span><h3>SEO Word Counter</h3><p>Word and character counter for writers.</p><a href="https://ariyanriad.blogspot.com/p/free-online-word-character-counter-seo.html" target="_blank" style="color:#ffbd39">Try Tool →</a></div></div>
-                <div class="col-md-6 mb-4"><div class="card text-center p-4" style="background: rgba(255,255,255,0.08); border-radius: 15px"><span style="font-size:40px">⚖️</span><h3>BMI Calculator</h3><p>Calculate BMI with health suggestions.</p><a href="https://ariyanriad.blogspot.com/p/free-online-bmi-calculator-with-health.html" target="_blank" style="color:#ffbd39">Try Tool →</a></div></div>
-                <div class="col-md-6 mb-4"><div class="card text-center p-4" style="background: rgba(255,255,255,0.08); border-radius: 15px"><span style="font-size:40px">📅</span><h3>Age Calculator</h3><p>Calculate exact age from birthdate.</p><a href="https://ariyanriad.blogspot.com/p/age-calculator.html" target="_blank" style="color:#ffbd39">Try Tool →</a></div></div>
-                <div class="col-md-6 mb-4"><div class="card text-center p-4" style="background: rgba(255,255,255,0.08); border-radius: 15px"><span style="font-size:40px">🧘</span><h3>Mindful Breathing</h3><p>Box breathing technique for stress relief.</p><a href="https://ariyanriad.blogspot.com/p/mindful-breathing-exercise.html" target="_blank" style="color:#ffbd39">Try Tool →</a></div></div>
-                <div class="col-md-6 mb-4"><div class="card text-center p-4" style="background: rgba(255,255,255,0.08); border-radius: 15px"><span style="font-size:40px">📐</span><h3>Unit Converter</h3><p>Convert length, weight, temperature, volume.</p><a href="https://ariyanriad.blogspot.com/p/unit-converter.html" target="_blank" style="color:#ffbd39">Try Tool →</a></div></div>
+                <div class="col-md-6 mb-4"><div class="card text-center p-4" style="background: rgba(255,255,255,0.08); border-radius: 15px; height:100%"><span style="font-size:40px">📄➡️🖼️</span><h3>PDF to Image Converter</h3><p>Convert PDF to JPG/PNG/WebP/BMP/TIFF.</p><a href="https://mohammadali-riad.github.io/pdf-to-image/" target="_blank" style="color:#ffbd39">Try Tool →</a></div></div>
+                <div class="col-md-6 mb-4"><div class="card text-center p-4" style="background: rgba(255,255,255,0.08); border-radius: 15px; height:100%"><span style="font-size:40px">🗜️🖼️</span><h3>Image Compressor Pro</h3><p>Compress JPG/PNG/WebP with quality slider.</p><a href="https://mohammadali-riad.github.io/image-compressor/" target="_blank" style="color:#ffbd39">Try Tool →</a></div></div>
+                <div class="col-md-6 mb-4"><div class="card text-center p-4" style="background: rgba(255,255,255,0.08); border-radius: 15px; height:100%"><span style="font-size:40px">📱</span><h3>QR Code Generator</h3><p>Generate QR codes for text, URLs, WiFi, contacts.</p><a href="https://ariyanriad.blogspot.com/p/qr-code-generator.html" target="_blank" style="color:#ffbd39">Try Tool →</a></div></div>
+                <div class="col-md-6 mb-4"><div class="card text-center p-4" style="background: rgba(255,255,255,0.08); border-radius: 15px; height:100%"><span style="font-size:40px">📝</span><h3>SEO Word Counter</h3><p>Word and character counter for writers.</p><a href="https://ariyanriad.blogspot.com/p/free-online-word-character-counter-seo.html" target="_blank" style="color:#ffbd39">Try Tool →</a></div></div>
+                <div class="col-md-6 mb-4"><div class="card text-center p-4" style="background: rgba(255,255,255,0.08); border-radius: 15px; height:100%"><span style="font-size:40px">⚖️</span><h3>BMI Calculator</h3><p>Calculate BMI with health suggestions.</p><a href="https://ariyanriad.blogspot.com/p/free-online-bmi-calculator-with-health.html" target="_blank" style="color:#ffbd39">Try Tool →</a></div></div>
+                <div class="col-md-6 mb-4"><div class="card text-center p-4" style="background: rgba(255,255,255,0.08); border-radius: 15px; height:100%"><span style="font-size:40px">📅</span><h3>Age Calculator</h3><p>Calculate exact age from birthdate.</p><a href="https://ariyanriad.blogspot.com/p/age-calculator.html" target="_blank" style="color:#ffbd39">Try Tool →</a></div></div>
+                <div class="col-md-6 mb-4"><div class="card text-center p-4" style="background: rgba(255,255,255,0.08); border-radius: 15px; height:100%"><span style="font-size:40px">🧘</span><h3>Mindful Breathing</h3><p>Box breathing technique for stress relief.</p><a href="https://ariyanriad.blogspot.com/p/mindful-breathing-exercise.html" target="_blank" style="color:#ffbd39">Try Tool →</a></div></div>
+                <div class="col-md-6 mb-4"><div class="card text-center p-4" style="background: rgba(255,255,255,0.08); border-radius: 15px; height:100%"><span style="font-size:40px">📐</span><h3>Unit Converter</h3><p>Convert length, weight, temperature, volume.</p><a href="https://ariyanriad.blogspot.com/p/unit-converter.html" target="_blank" style="color:#ffbd39">Try Tool →</a></div></div>
             </div>
         </div>
     </section>
@@ -336,14 +407,28 @@
     <!-- Awards Section -->
     <section class="ftco-section" id="awards-section">
         <div class="container">
-            <div class="row justify-content-center mb-5"><div class="col-md-7 heading-section text-center"><h1 class="big big-2">Awards</h1><h2 class="mb-4">Recognition & Achievements</h2><p>Official awards received for outstanding performance and contribution.</p></div></div>
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-7 heading-section text-center ftco-animate">
+                    <h1 class="big">Awards</h1>
+                    <h2 class="mb-4">Recognition & Achievements</h2>
+                    <p>Official awards received for outstanding performance and contribution.</p>
+                </div>
+            </div>
             <div class="row justify-content-center">
-                <div class="col-md-8"><div class="text-center p-5" style="background: rgba(255,255,255,0.08); border-radius: 20px"><span style="font-size:50px">🏆</span><h3 style="color:#ffbd39">Ambassador Award for Excellent Encouragement</h3><p><strong>International Linguistics Challenge (ILC) 2025 Edition</strong></p><p>Recognized for creating enthusiasm for linguistics.</p><a href="https://lingchallenge.org/en/mohali" target="_blank" style="color:#3b82f6">View Official Profile →</a></div></div>
+                <div class="col-md-8">
+                    <div class="exp-card text-center">
+                        <span style="font-size: 50px;">🏆</span>
+                        <h3 style="color: #ffbd39; margin-top: 10px;">Ambassador Award for Excellent Encouragement</h3>
+                        <p><strong>International Linguistics Challenge (ILC) 2025 Edition</strong></p>
+                        <p>Recognized for creating enthusiasm for linguistics in the region and inspiring students.</p>
+                        <a href="https://lingchallenge.org/en/mohali" target="_blank" style="color:#3b82f6">View Official Profile →</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Counter & Blog Section (Fixed Visibility) -->
+    <!-- Counter & Blog Section -->
     <section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
         <div class="container"><div class="row d-md-flex align-items-center">
             <div class="col-md-3 text-center"><div><strong class="number" data-number="5">5</strong><span>Ambassador Roles</span></div></div>
@@ -370,7 +455,13 @@
     <!-- Contact Section -->
     <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
         <div class="container">
-            <div class="row justify-content-center mb-5"><div class="col-md-7 heading-section text-center"><h1 class="big big-2">Contact</h1><h2 class="mb-4">Contact Me</h2><p>Below are the details to reach out to me!</p></div></div>
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-7 heading-section text-center ftco-animate">
+                    <h1 class="big">Contact</h1>
+                    <h2 class="mb-4">Contact Me</h2>
+                    <p>Below are the details to reach out to me!</p>
+                </div>
+            </div>
             <div class="row d-flex contact-info mb-5">
                 <div class="col-md-3 text-center"><div class="box p-4"><span class="icon-map-signs"></span><h3>Location</h3><p>Sirajganj, Bangladesh</p></div></div>
                 <div class="col-md-3 text-center"><div class="box p-4"><span class="icon-paper-plane"></span><h3>Email</h3><p><a href="mailto:riad.remian@gmail.com">riad.remian@gmail.com</a></p></div></div>
@@ -388,8 +479,8 @@
         </div>
     </section>
 
-    <!-- Footer - No Extra Space -->
-    <footer class="ftco-footer ftco-section" style="padding: 20px 0 !important; margin: 0 !important;">
+    <!-- Footer -->
+    <footer class="ftco-footer ftco-section" style="padding: 20px 0 !important;">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
