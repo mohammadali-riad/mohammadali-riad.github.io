@@ -62,7 +62,7 @@
         box-shadow: 0 15px 30px rgba(0,0,0,0.3);
     }
 
-    /* Section Heading with Big Background Text - FIXED POSITION */
+    /* Section Heading with Big Background Text - CUSTOMIZED POSITION */
     .heading-section {
         position: relative;
         text-align: center;
@@ -79,27 +79,45 @@
         width: 100%;
         text-align: center;
         z-index: 0;
-        letter-spacing: 5px;
-        white-space: nowrap;
+        letter-spacing: 3px;
+        line-height: 1;
+        pointer-events: none;
     }
     .heading-section h2 {
         position: relative;
-        z-index: 1;
+        z-index: 2;
         font-size: 36px;
         margin-bottom: 10px;
+        background: linear-gradient(45deg, #ffbd39, #fff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
     }
     .heading-section p {
         position: relative;
-        z-index: 1;
+        z-index: 2;
+        color: #ddd;
     }
+    
+    /* Perfect alignment for each section */
+    #about-section .heading-section .big { font-size: 90px; letter-spacing: 2px; }
+    #resume-section .heading-section .big { font-size: 95px; letter-spacing: 4px; }
+    #project-section .heading-section .big { font-size: 92px; letter-spacing: 3px; }
+    #awards-section .heading-section .big { font-size: 88px; letter-spacing: 2px; }
+    #contact-section .heading-section .big { font-size: 94px; letter-spacing: 3px; }
+    
     @media (max-width: 768px) {
         .heading-section .big {
             font-size: 50px;
-            white-space: normal;
+            letter-spacing: 1px;
+            line-height: 1.1;
         }
         .heading-section h2 {
             font-size: 28px;
         }
+        #about-section .heading-section .big { font-size: 48px; }
+        #resume-section .heading-section .big { font-size: 52px; }
+        #project-section .heading-section .big { font-size: 50px; }
     }
 
     /* Experience Card Styling */
@@ -199,6 +217,20 @@
     .ftco-footer {
         padding: 20px 0 !important;
     }
+
+    /* Education styling fix */
+    .big-4 {
+        font-size: 24px;
+        color: #ffbd39;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .underline {
+        height: 3px;
+        background: linear-gradient(90deg, #ffbd39, transparent);
+        width: 100px;
+        margin: 0 auto;
+    }
     </style>
 
   </head>
@@ -276,7 +308,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12 heading-section text-center ftco-animate">
-                    <h1 class="big">About</h1>
+                    <h1 class="big">ABOUT</h1>
                     <h2 class="mb-4">About Me</h2>
                 </div>
             </div>
@@ -330,7 +362,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12 heading-section text-center ftco-animate">
-                    <h1 class="big">Resume</h1>
+                    <h1 class="big">RESUME</h1>
                     <h2 class="mb-4">Experience</h2>
                 </div>
             </div>
@@ -393,7 +425,12 @@
             </div>
 
             <!-- Education -->
-            <div class="row mt-5"><h1 class="big-4">Education</h1><div class="underline"></div></div><br>
+            <div class="row mt-5">
+                <div class="col-md-12 text-center">
+                    <h1 class="big-4">Education</h1>
+                    <div class="underline"></div>
+                </div>
+            </div><br>
             <div class="row">
                 <div class="col-md-6"><div class="resume-wrap ftco-animate"><h2>Higher Secondary Certificate (HSC)</h2><span class="position">Dhaka Residential Model College (DRMC)</span><p style="color:#ffbd39">Science Group</p></div></div>
                 <div class="col-md-6"><div class="resume-wrap ftco-animate"><h2>Secondary School Certificate (SSC)</h2><span class="position">Khwaja Yunus Ali Laboratory School and College</span><p style="color:#ffbd39">Science Group</p></div></div>
@@ -406,7 +443,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12 heading-section text-center ftco-animate">
-                    <h1 class="big">Projects</h1>
+                    <h1 class="big">PROJECTS</h1>
                     <h2 class="mb-4">My Web Tools</h2>
                 </div>
             </div>
@@ -428,7 +465,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12 heading-section text-center ftco-animate">
-                    <h1 class="big">Awards</h1>
+                    <h1 class="big">AWARDS</h1>
                     <h2 class="mb-4">Recognition & Achievements</h2>
                     <p>Official awards received for outstanding performance and contribution.</p>
                 </div>
@@ -500,7 +537,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12 heading-section text-center ftco-animate">
-                    <h1 class="big">Contact</h1>
+                    <h1 class="big">CONTACT</h1>
                     <h2 class="mb-4">Contact Me</h2>
                     <p>Below are the details to reach out to me!</p>
                 </div>
